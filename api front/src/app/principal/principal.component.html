@@ -1,0 +1,43 @@
+<form>
+  <h1>Cadastre seu carro!</h1>
+  <img src="assets/carro.png" alt="">
+
+  <input type="text" placeholder="Marca" class="form-control" name="marca" [(ngModel)]="carro.marca">
+  <input type="text" placeholder="Modelo" class="form-control" name="modelo" [(ngModel)]="carro.modelo">
+  <input type="text" placeholder="Cor" class="form-control" name="cor" [(ngModel)]="carro.cor">
+  <input type="number" placeholder="ano" class="form-control" name="ano" [(ngModel)]="carro.ano">
+
+  <input type="button" value="Cadastrar" *ngIf="btnCadastro" class="btn btn-primary" (click)="cadastrar()">
+  <input type="button" value="Alterar" *ngIf="!btnCadastro" class="btn btn-warning" (click)="editar()">
+  <input type="button" value="Remover" *ngIf="!btnCadastro" class="btn btn-danger" (click)="remover()">
+  <input type="button" value="Cancelar" *ngIf="!btnCadastro" class="btn btn-secondary" (click)="cancelar()">
+</form>
+
+<div class="tabela">
+  <table class="table" *ngIf="tabela">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Marca</th>
+            <th>Modelo</th>
+            <th>Cor</th>
+            <th>Ano</th>
+            <th>Selecionar</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let c of carros; index as i">
+            <td>{{i+1}}</td>
+            <td>{{c.marca}}</td>
+            <td>{{c.modelo}}</td>
+            <td>{{c.cor}}</td>
+            <td>{{c.ano}}</td>
+            <td><button class="btn btn-success" (click)="selecionarCarro(i)">Selecionar</button></td>
+        </tr>
+    </tbody>
+</table>
+</div>
+
+<footer><h4>Desenvolvido por Vitor Lucas Araujo</h4></footer>
+

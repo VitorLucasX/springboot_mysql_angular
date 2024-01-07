@@ -1,0 +1,9 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+  background-image: url(assets/pexels-albin-berlin-919073\ \(1\).jpg);
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 150vh;
+  overflow: hidden;
+}
